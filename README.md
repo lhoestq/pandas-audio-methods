@@ -9,6 +9,7 @@ Features:
   * `.read()` / `.write()`
   * `.truncate()`
   * `.seek()`
+* Easy to use with `librosa`
 * Save dataframes with `sf.SoundFile` objects to Parquet
 * Process audios in parallel with Dask
 * Manipulate audio datasets from Hugging Face
