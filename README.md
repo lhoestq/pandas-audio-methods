@@ -10,8 +10,8 @@ Features:
   * `.truncate()`
   * `.seek()`
 * Save dataframes with `sf.SoundFile` objects to Parquet
-* Process Audios in parallel with Dask
-* Manipulate Audio datasets from Hugging Face
+* Process audios in parallel with Dask
+* Manipulate audio datasets from Hugging Face
 
 ## Installation
 
@@ -21,9 +21,9 @@ pip install pandas-audio-methods
 
 ## Usage
 
-You can open Audios as `sf.SoundFile` objects using the `.open()` method.
+You can open audios as `sf.SoundFile` objects using the `.open()` method.
 
-Once the Audios are opened, you can call any [sf.SoundFile method](https://pillow.readthedocs.io/en/stable/reference/Audio.html#the-Audio-class):
+Once the audios are opened, you can call any [sf.SoundFile method](https://pillow.readthedocs.io/en/stable/reference/Audio.html#the-Audio-class):
 
 ```python
 import pandas as pd
@@ -71,10 +71,10 @@ df = pd.read_parquet("data.parquet")
 df["audio"] = df["audio"].sf.enable()
 ```
 
-This doesn't just save the paths to the Audio files, but the actual Audios themselves !
+This doesn't just save the paths to the Audio files, but the actual audios themselves !
 
 Under the hood it saves dictionaries of `{"bytes": <bytes of the Audio file>, "path": <path or name of the Audio file>}`.
-The Audios are saved as bytes using their Audio encoding or WAV by default. Anyone can load the Parquet data even without `pandas-audio-methods` since it doesn't rely on extension types.
+The audios are saved as bytes using their Audio encoding or WAV by default. Anyone can load the Parquet data even without `pandas-audio-methods` since it doesn't rely on extension types.
 
 Note: if you created the `sf.SoundFiles` manually, don't forget to enable the `sf` methods to enable saving to Parquet.
 
