@@ -50,7 +50,7 @@ df["audio"] = df["audio"].sf.write()
 Here is how to enable `sf` methods for `sf.SoundFiles` created manually:
 
 ```python
-df = pd.DataFrame({"audio": [sf.SoundFile.open("path/to/audio.wav")]})
+df = pd.DataFrame({"audio": [sf.SoundFile("path/to/audio.wav")]})
 df["audio"] = df["audio"].sf.enable()
 # 0    SoundFile('path/to/audio.wav', mode='r', sampl...
 # Name: Audio, dtype: object, soundfile methods enabled
