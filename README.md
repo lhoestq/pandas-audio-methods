@@ -23,7 +23,7 @@ pip install pandas-audio-methods
 
 You can open audios as `sf.SoundFile` objects using the `.open()` method.
 
-Once the audios are opened, you can call any [sf.SoundFile method](https://pillow.readthedocs.io/en/stable/reference/Audio.html#the-Audio-class):
+Once the audios are opened, you can call any [sf.SoundFile method](https://python-soundfile.readthedocs.io/en/0.11.0/#soundfile.SoundFile):
 
 ```python
 import pandas as pd
@@ -53,7 +53,7 @@ Here is how to enable `sf` methods for `sf.SoundFiles` created manually:
 df = pd.DataFrame({"audio": [sf.SoundFile("path/to/audio.wav")]})
 df["audio"] = df["audio"].sf.enable()
 # 0    SoundFile('path/to/audio.wav', mode='r', sampl...
-# Name: Audio, dtype: object, soundfile methods enabled
+# Name: audio, dtype: object, soundfile methods enabled
 ```
 
 ## Save
@@ -71,10 +71,10 @@ df = pd.read_parquet("data.parquet")
 df["audio"] = df["audio"].sf.enable()
 ```
 
-This doesn't just save the paths to the Audio files, but the actual audios themselves !
+This doesn't just save the paths to the audio files, but the actual audios themselves !
 
-Under the hood it saves dictionaries of `{"bytes": <bytes of the Audio file>, "path": <path or name of the Audio file>}`.
-The audios are saved as bytes using their Audio encoding or WAV by default. Anyone can load the Parquet data even without `pandas-audio-methods` since it doesn't rely on extension types.
+Under the hood it saves dictionaries of `{"bytes": <bytes of the audio file>, "path": <path or name of the audio file>}`.
+The audios are saved as bytes using their audio encoding or WAV by default. Anyone can load the Parquet data even without `pandas-audio-methods` since it doesn't rely on extension types.
 
 Note: if you created the `sf.SoundFiles` manually, don't forget to enable the `sf` methods to enable saving to Parquet.
 
@@ -102,7 +102,7 @@ if __name__ == "__main__":
 
 ## Hugging Face support
 
-Most Audio datasets in Parquet format on Hugging Face are compatible with `pandas-audio-methods`. For example you can load the microset of the [People's Speech dataset](https://huggingface.co/datasets/MLCommons/peoples_speech):
+Most audio datasets in Parquet format on Hugging Face are compatible with `pandas-audio-methods`. For example you can load the microset of the [People's Speech dataset](https://huggingface.co/datasets/MLCommons/peoples_speech):
 
 ```python
 df = pd.read_parquet("hf://datasets/MLCommons/peoples_speech/microset/train-00000-of-00001.parquet")
