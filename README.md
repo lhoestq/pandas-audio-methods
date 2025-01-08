@@ -74,7 +74,7 @@ df["audio"] = df["audio"].sf.enable()
 This doesn't just save the paths to the Audio files, but the actual Audios themselves !
 
 Under the hood it saves dictionaries of `{"bytes": <bytes of the Audio file>, "path": <path or name of the Audio file>}`.
-The Audios are saved as bytes using their Audio encoding or PNG by default. Anyone can load the Parquet data even without `pandas-audio-methods` since it doesn't rely on extension types.
+The Audios are saved as bytes using their Audio encoding or WAV by default. Anyone can load the Parquet data even without `pandas-audio-methods` since it doesn't rely on extension types.
 
 Note: if you created the `sf.SoundFiles` manually, don't forget to enable the `sf` methods to enable saving to Parquet.
 

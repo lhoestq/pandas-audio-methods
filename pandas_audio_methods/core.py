@@ -20,7 +20,7 @@ huggingface.init()
 
 
 def _audio_to_bytes(audio: sf.SoundFile) -> bytes:
-    """Convert a sf.SoundFile object to bytes using native compression if possible, otherwise use PNG/TIFF compression."""
+    """Convert a sf.SoundFile object to bytes using native compression."""
     buffer = BytesIO()
     offset = audio.tell()
     sf.write(buffer, audio.read(), samplerate=audio.samplerate, subtype=audio.subtype, endian=audio.endian, format=audio.format, compression_level=audio.compression_level, bitrate_mode=audio.bitrate_mode)
