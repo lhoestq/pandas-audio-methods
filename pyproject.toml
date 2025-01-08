@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "pandas-audio-methods"
+version = "0.0.1"
+description = "Audio methods for pandas dataframes using soundfile"
+authors = ["Quentin Lhoest"]
+license = "Apache License 2.0"
+readme = "README.md"
+packages = [
+    { include = "pandas_audio_methods" },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+numpy = ">=2.0"
+pandas = ">=2.0"
+pyarrow = ">=0.18"
+soundfile = ">=0.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
