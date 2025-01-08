@@ -6,7 +6,7 @@ Features:
 
 * Use `sf.SoundFile` objects in pandas dataframes
 * Call `sf.SoundFile` methods on a column, for example:
-  * `.read()`
+  * `.read()` / `.write()`
   * `.truncate()`
   * `.seek()`
 * Save dataframes with `sf.SoundFile` objects to Parquet
